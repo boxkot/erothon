@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.page {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.vertival-space {
+  margin-bottom: 5px;
+}
+
+#_search {
+}
+
+#_search_box {
+  position: absolute;
+  background: black;
+  top: 0pc;
+  left: 0pc;
+  width: 100pc;
+  height: 100pc;
+  z-index: 1001;
+  display: none;
+  moz-opacity: 0.8;
+  opacity:.80;
+}
+
+#_contents {
+  position: absolute;
+  background: white;
+  top: 10pc;
+  left: 15pc;
+  width: 50pc;
+  height: 450px;
+  z-index: 1002;
+  display: none;
+  overflow: auto;
+}

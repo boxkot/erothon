@@ -1,0 +1,12 @@
+timestamp: 1389714230.0
+
+_extend=_buf.extend;_to_str=to_str;_escape=escape; _extend(('''<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="''', _escape(_to_str(viewpath)), '''/css/common.css">
+<link rel="stylesheet" type="text/css" href="''', _escape(_to_str(viewpath)), '''/css/table.css">
+<script type="text/JavaScript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<title>動画サイト</title>
+</head>
+<body>\n''', ));

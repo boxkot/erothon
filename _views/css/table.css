@@ -1,0 +1,26 @@
+@chaset "UTF-8";
+
+.movie_table {
+  margin-left: 50px;
+  margin-top:  50px;
+  width: 60pc;
+  border: 1px solid;
+}
+
+.movie_table tr {
+  text-align: left;
+  overflow: hidden;
+  clear: both;
+  border: 1px solid;
+}
+
+.movie_table td {
+  text-align: left;
+  overflow: hidden;
+  clear: both;
+  border: 1px solid;
+}
+
+.movie_image {
+  width: 1px;
+}

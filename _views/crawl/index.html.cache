@@ -1,0 +1,21 @@
+timestamp: 1389609458.0
+
+_extend=_buf.extend;_to_str=to_str;_escape=escape; _extend(('''<h2>''', _escape(_to_str(result)), '''</h2>
+<p><a href="./../">戻る</a></p>
+<form action="" method="post">
+<p>キーワード:<input name="keyword" type="keyword"</p>
+<p>開始ページ:
+<select name="start">\n''', ));
+for i in xrange(1, 101):
+    _extend(('''  <option value="''', _escape(_to_str(i)), '''">''', _escape(_to_str(i)), '''</option>\n''', ));
+#end
+_extend(('''</select></p>
+
+<p>終了ページ:
+<select name="end">\n''', ));
+for i in xrange(1, 1001):
+    _extend(('''  <option value="''', _escape(_to_str(i)), '''">''', _escape(_to_str(i)), '''</option>\n''', ));
+#end
+_extend(('''</select></p>
+<input type="submit" value="実行">
+</form>\n''', ));

@@ -1,0 +1,5 @@
+timestamp: 1389594172.0
+
+_extend=_buf.extend;_to_str=to_str;_escape=escape; _extend(('''<script type="text/JavaScript" src="''', _escape(_to_str(viewpath)), '''/script/script.js"></script>
+</body>
+</html>''', ));

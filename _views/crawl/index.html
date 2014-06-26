@@ -1,0 +1,19 @@
+<h2>${result}</h2>
+<p><a href="./../">戻る</a></p>
+<form action="" method="post">
+<p>キーワード:<input name="keyword" type="keyword"</p>
+<p>開始ページ:
+<select name="start">
+<?py for i in xrange(1, 101): ?>
+  <option value="${i}">${i}</option>
+<?py #end ?>
+</select></p>
+
+<p>終了ページ:
+<select name="end">
+<?py for i in xrange(1, 1001): ?>
+  <option value="${i}">${i}</option>
+<?py #end ?>
+</select></p>
+<input type="submit" value="実行">
+</form>

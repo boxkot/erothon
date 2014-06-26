@@ -1,0 +1,72 @@
+<h2>動画リスト</h2>
+<p><a href="./../">戻る</a></p>
+<button id="_search">検索を行う</button>
+<button id="update_button_check">更新処理に全チェック</button>
+
+<h3>ページ欄</h3>
+<?py for i in xrange(1, pageNum): ?>
+<div class="page"><a href="./${reqUri}page=${i}">${i}ページ目</a></div>
+<?py if i % 10 == 0: ?>
+<div class="vertival-space"></div>
+<?py #end ?>
+<?py #end ?>
+
+<form action="/fc2/index/movie_update/" method="post">
+<?py for row in data: ?>
+  <table class="movie_table">
+    <tr>
+      <td class="movie_image" rowspan="4"><img src=${row['image_link']}></td>
+      <td colspan="3"><a href="${row['link']}">${row['title']}</a></td>
+    </tr>
+    <tr>
+      <td>キーワード:${row['keyword']}</td>
+      <td>ステータス:${row['status']}</td>
+      <td>更新日:${row['update_at']}</td>
+    </tr>
+    <tr>
+      <td>視聴数:${row['view_num']}</td>
+      <td>アルバム数:${row['album_num']}</td>
+      <td>コメント数:${row['comment_num']}</td>
+    </tr>
+    <tr>
+      <td colspan="3">${row['comment']}</td>
+    </tr>
+    <tr>
+<?py if row['favorite'] == 0: ?>
+      <td><input type="checkbox" name="favorite[]" value="${row['id']}">お気に入り</td>
+<?py else: ?>
+      <td><input type="checkbox" name="favorite[]" value="${row['id']}">お気に入りから外す</td>
+<?py #end ?>
+      <td><input type="checkbox" name="update[]" value="${row['id']}">更新処理</td>
+      <td><input type="checkbox" name="dust[]" value="${row['id']}">お蔵入り</td>
+    </tr>
+  </table>
+<?py #end ?>
+<input id="go_update" style="width:200px; height:150px; margin-top: 30px; margin-bottom: 30px; margin-left: 25px" type="submit" value="チェックした処理を開始する">
+</form>
+
+<?py for i in xrange(1, pageNum): ?>
+<div class="page"><a href="./${reqUri}page=${i}">${i}ページ目</a></div>
+<?py if i % 10 == 0: ?>
+<div class="vertival-space"></div>
+<?py #end ?>
+<?py #end ?>
+
+
+<!-- 検索ボックス -->
+<div id="_search_box">
+</div>
+<div id="_contents">
+  <form action="" method="post">
+    <p>キーワード:<input type="text" name="keyword"></p>
+    <p>タイトル:<input type="text" name="title"></p>
+    <p>ステータス:<input type="radio" name="status" value="全員" checked>全員<input type="radio" name="status" value="有料会員">有料会員</p>
+    <p>視聴数:<input style="width: 30px"type="text" name="view_num">以上</p>
+    <p>アルバム数:<input style="width: 30px"type="text" name="album_num">以上</p>
+    <p>コメント数:<input style="width: 30px" type="text" name="comment_num">以上</p>
+    <p>コメント:<input type="text" name="comment"></p>
+    <p>お気に入り:<input type="checkbox" name="favorite" value="1"></p>
+    <input type="submit" value="検索">
+    <input type="button" id="_close" value="キャンセル">
+  </form>
+</div>

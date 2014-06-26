@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.py|.+\.css$|.+\.gif$|.+\.jpg$|.+\.png$|.+\.js$)
+RewriteCond %{REQUEST_URI} !/_views/css/
+RewriteCond %{REQUEST_URI} !/_views/script/
+
+RewriteRule ^(.*)$ /fc2/index.py/$1 [L]
